@@ -1,0 +1,23 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+    enabled-by-default: 'false'
+  endpoint:
+    prometheus:
+      enabled: 'false'
+    health:
+      enabled: 'true'
+      show-details: always
+    metrics:
+      enabled: 'false'
+
+spring:
+  application:
+    name: app-healthcheck
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+server:
+  port: 1005
